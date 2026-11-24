@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: careerboard-db
+    environment:
+      POSTGRES_DB: careerboard
+      POSTGRES_USER: careerboard
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U careerboard -d careerboard"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pgdata:
