@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    password: test-only
+app:
+  jwt:
+    secret: dGVzdC1vbmx5LXNlY3JldC10ZXN0LW9ubHktc2VjcmV0LTAxMjM0NTY3ODk=
