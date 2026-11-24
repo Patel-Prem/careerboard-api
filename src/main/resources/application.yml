@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: careerboard-api
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: jdbc:postgresql://localhost:5432/careerboard
+    username: careerboard
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    access-token-minutes: 15
+    refresh-token-days: 7
